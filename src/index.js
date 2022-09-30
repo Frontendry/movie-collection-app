@@ -4,13 +4,14 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // Context
-import { FilmsContextProvider } from "./context/filmsContextStore";
+import * as filmsContextStore from "./context/filmsContextStore";
 
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const { FilmsContextProvider } = filmsContextStore;
 root.render(
   <React.StrictMode>
     <Router>
