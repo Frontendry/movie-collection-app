@@ -1,7 +1,7 @@
 // React Modules
 import { createContext, useContext } from "react";
 
-const filmsContext = createContext();
+const FilmsContext = createContext();
 
 export const FilmsContextProvider = ({ children }) => {
   /*   const [filmData, setFilmData] = useState([]);
@@ -48,16 +48,16 @@ export const FilmsContextProvider = ({ children }) => {
   }, []); */
 
   return (
-    <filmsContext.Provider
+    <FilmsContext.Provider
       value={{
         allFilms: "test",
         allGenres: "testst",
       }}
     >
       {children}
-    </filmsContext.Provider>
+    </FilmsContext.Provider>
   );
 };
 
 // Custom Hook for useContext
-export const useFilmsContext = () => useContext(filmsContext);
+export const useFilmsContext = () => useContext(FilmsContext);
