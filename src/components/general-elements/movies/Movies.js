@@ -9,7 +9,7 @@ const Movies = ({ moviesCollection, collectionTitle }) => {
           <h2 className="text-white text-3xl">{collectionTitle}</h2>
         </header>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {moviesCollection.map((movieData) => (
             <Movie key={movieData.imdbID} movieData={movieData} />
           ))}

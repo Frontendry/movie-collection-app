@@ -6,12 +6,12 @@ const MovieFull = ({ movieData }) => {
   const GenreList = Genre.split(", ");
   return (
     <section>
-      <div className="container mx-auto px-7 py-8 flex ">
-        <figure className="w-80">
-          <img src={PosterNew} alt={Title} />
+      <div className="container mx-auto px-7 py-8 flex flex-col md:flex-row">
+        <figure className="w-full sm:w-80 mx-auto md:mx-0 mb-16 md:mb-0">
+          <img src={PosterNew} alt={Title} className="w-full h-auto" />
         </figure>
 
-        <div className="grow shrink basis-0 text-white pl-10">
+        <div className="md:grow md:shrink md:basis-0 text-white md:pl-10">
           <h1 className="text-3xl mb-4">{Title}</h1>
 
           <div className="flex items-center mb-6">

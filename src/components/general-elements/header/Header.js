@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="relative z-50">
       <div className="container mx-auto px-7 py-8 flex items-center">
-        <h1 className="text-white font-bold text-4xl">
+        <h1 className="text-white font-bold text-xl sm:text-4xl">
           <Link to="/">Movie Collection</Link>
         </h1>
         <Navigation />

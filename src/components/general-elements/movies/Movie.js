@@ -8,7 +8,7 @@ const Movie = ({ movieData }) => {
       {PosterNew && (
         <figure>
           <Link to={`/movie/${imdbID}`}>
-            <img src={PosterNew} alt={Title} />
+            <img src={PosterNew} alt={Title} className="w-full h-auto" />
           </Link>
         </figure>
       )}
