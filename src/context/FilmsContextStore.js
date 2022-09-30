@@ -1,13 +1,13 @@
 // React Modules
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext } from "react";
 
 const filmsContext = createContext();
 
 export const FilmsContextProvider = ({ children }) => {
-  const [filmData, setFilmData] = useState([]);
-  const [genreData, setGenreData] = useState([]);
+  /*   const [filmData, setFilmData] = useState([]);
+  const [genreData, setGenreData] = useState([]); */
 
-  const getData = () => {
+  /*  const getData = () => {
     fetch("api/film.json", {
       headers: {
         "Content-Type": "application/json",
@@ -45,13 +45,13 @@ export const FilmsContextProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, []); */
 
   return (
     <filmsContext.Provider
       value={{
-        allFilms: filmData,
-        allGenres: genreData,
+        allFilms: "test",
+        allGenres: "testst",
       }}
     >
       {children}
