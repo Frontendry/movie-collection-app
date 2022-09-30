@@ -8,7 +8,7 @@ export const FilmsContextProvider = ({ children }) => {
   const [genreData, setGenreData] = useState([]);
 
   const getData = () => {
-    fetch("api/film.json", {
+    fetch("/api/film.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
