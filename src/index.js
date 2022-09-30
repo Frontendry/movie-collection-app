@@ -12,7 +12,6 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-console.log(filmsContextStore);
 const { FilmsContextProvider } = filmsContextStore;
 root.render(
   <React.StrictMode>
