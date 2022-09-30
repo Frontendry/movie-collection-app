@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // Context
-import * as filmsContextStore from "./context/filmsContextStore";
+import * as filmsContextStore from "./context/FilmsContextStore";
 
 import "./index.css";
 import App from "./App";
