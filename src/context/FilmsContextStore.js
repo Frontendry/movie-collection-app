@@ -18,7 +18,6 @@ export const FilmsContextProvider = ({ children }) => {
         return response.json();
       })
       .then(function (filmsJson) {
-        console.log(filmsJson);
         // Set All Films Data
         setFilmData(filmsJson);
 

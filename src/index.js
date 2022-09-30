@@ -6,8 +6,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 // Context
 import * as filmsContextStore from "./context/FilmsContextStore";
 
+// Styles
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./index.css";
+
+// Components
 import App from "./App";
+
+// Reporting
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

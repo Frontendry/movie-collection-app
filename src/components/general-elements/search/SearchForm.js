@@ -11,21 +11,20 @@ const SearchForm = () => {
   const { allFilms } = useFilmsContext();
 
   // Searched Data State
-  const { inputRef, setSearchedData } = useSearchContext();
+  const { inputRef, setSearchedData, setCurrentValue } = useSearchContext();
 
   // Search Query State
   const [searchQuery, setSearchQuery] = useState("");
 
   const debounceDelay = 500;
 
-  const changeHandler = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const debouncedChangeHandler = useMemo(
-    () => debounce(changeHandler, debounceDelay),
-    []
-  );
+  const debouncedChangeHandler = useMemo(() => {
+    const changeHandler = (event) => {
+      setCurrentValue(event.target.value);
+      setSearchQuery(event.target.value);
+    };
+    return debounce(changeHandler, debounceDelay);
+  }, [setCurrentValue]);
 
   useEffect(() => {
     // Update Value of inputRef. Controlled inputs is buggy with useMemo.
@@ -54,6 +53,7 @@ const SearchForm = () => {
     searchQuery,
     setSearchedData,
     debouncedChangeHandler,
+    setCurrentValue,
   ]);
 
   return (

@@ -6,15 +6,17 @@ import NoSearchResult from "./NoSearchResult";
 // Components
 
 const SearchDropDown = () => {
-  const { searchedData, inputRef } = useSearchContext();
+  const { searchedData, currentValue } = useSearchContext();
+
+  const hideShow = (currentValue) => {
+    return currentValue === "" ? "hidden" : "";
+  };
 
   return (
     <div
-      className={`absolute left-10 right-10 top-full bg-slate-500 text-white ${
-        inputRef.current !== null && inputRef.current.value === ""
-          ? "hidden"
-          : ""
-      }`}
+      className={`absolute left-10 right-10 top-full bg-slate-500 text-white ${hideShow(
+        currentValue
+      )}`}
     >
       {searchedData && searchedData.length ? (
         <SearchResults filmsData={searchedData} />

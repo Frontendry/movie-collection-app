@@ -7,6 +7,7 @@ const SearchContext = createContext();
 export const SearchContextProvider = ({ children }) => {
   const inputRef = useRef(null);
   const [searchedData, setSearchedData] = useState([]);
+  const [currentValue, setCurrentValue] = useState("");
 
   return (
     <SearchContext.Provider
@@ -14,6 +15,8 @@ export const SearchContextProvider = ({ children }) => {
         inputRef,
         searchedData,
         setSearchedData,
+        currentValue,
+        setCurrentValue,
       }}
     >
       {children}
