@@ -1,6 +1,10 @@
+// React and React Router Modules
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
+
+// Context
+import { FilmsContextProvider } from "./context/filmsContextStore";
 
 import "./index.css";
 import App from "./App";
@@ -10,7 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <FilmsContextProvider>
+        <App />
+      </FilmsContextProvider>
     </Router>
   </React.StrictMode>
 );

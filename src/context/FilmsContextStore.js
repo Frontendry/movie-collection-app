@@ -1,7 +1,7 @@
 // React Modules
 import { createContext, useContext, useState, useEffect } from "react";
 
-const FilmsContext = createContext();
+const filmsContext = createContext();
 
 export const FilmsContextProvider = ({ children }) => {
   const [filmData, setFilmData] = useState([]);
@@ -18,6 +18,7 @@ export const FilmsContextProvider = ({ children }) => {
         return response.json();
       })
       .then(function (filmsJson) {
+        console.log(filmsJson);
         // Set All Films Data
         setFilmData(filmsJson);
 
@@ -47,16 +48,16 @@ export const FilmsContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <FilmsContext.Provider
+    <filmsContext.Provider
       value={{
         allFilms: filmData,
         allGenres: genreData,
       }}
     >
       {children}
-    </FilmsContext.Provider>
+    </filmsContext.Provider>
   );
 };
 
 // Custom Hook for useContext
-export const useFilmsContext = () => useContext(FilmsContext);
+export const useFilmsContext = () => useContext(filmsContext);
