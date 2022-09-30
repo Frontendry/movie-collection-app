@@ -11,13 +11,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const { FilmsContextProvider } = filmsContextStore;
+
+console.log(filmsContextStore);
+//const { FilmsContextProvider } = filmsContextStore;
 root.render(
   <React.StrictMode>
     <Router>
-      <FilmsContextProvider>
-        <App />
-      </FilmsContextProvider>
+      <App />
     </Router>
   </React.StrictMode>
 );
